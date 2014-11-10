@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>PHP</title>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="Bookmark" type="image/x-icon" href="favicon.ico">
+	<!--加入高亮的js和css文件，如果你的编辑器和展示也是一个页面那么高亮的js可以不加载-->
+    <script type="text/javascript" charset="utf-8" src="js/SyntaxHighlighter/shCore.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/SyntaxHighlighter/shCoreDefault.css"/>
+	<link rel="stylesheet" type="text/css" href="css/common.css" media="all" />
+	<style>
+		body{font-family:'微软雅黑';}
+		.content{width:1000px;margin: 0 auto;}
+		a{text-decoration:none;}
+		.content a{color:#333;border-bottom:1px dotted #333;}
+		.content a:hover{color:#999;border-bottom:1px dotted #999;}
+		.p2{text-indent:2em;}
+		.red{color:red;}
+	</style>
+</head>
+<body>
+	<div class="content">
+	<pre class="brush:php;toolbar:false">
+	&lt;?php
+	header('Content-Type:text/html;charset=utf-8');
+	
+	//中文截取不乱码
+	
+	$str = '一二三四五六七 哦34 s dffg哦123213打算案例 撒发生地方撒';
+	function str_china($str,$num){
+		
+		$a= preg_split('//u',$str,$num+2);
+		array_pop($a);
+		
+		return implode('',$a);
+	
+	}
+	$res= str_china($str,7);
+	var_dump($res);
+	
+	</pre>
+	<div style="border:1px solid black;width:20px;height:400px;">
+		test
+	</div>
+	</div>
+
+<a id="toTop" href="javascript:;" style="display: inline;">
+	<span id="toTopHover"></span>
+	<img width="40" height="40" alt="To Top" src="./images/to-top@2x.png">
+</a>
+<script type="text/javascript" src="./js/libs/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript">
+	SyntaxHighlighter.highlight(); //为了在编辑器之外能展示高亮代码
+</script>
+</body>
+</html>
